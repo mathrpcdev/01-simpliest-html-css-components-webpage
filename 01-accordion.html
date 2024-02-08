@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <title>Accordion Component</title>
+
+    <style>
+        /*
+        SPACING SYSTEM (px)
+        2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+        FONT SIZE SYSTEM (px)
+        10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+        */
+
+        /* 
+        MAIN COLOR: #087f5b  
+        GRAY COLOR #343a40
+        */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            color: #343a40;
+            line-height: 1;
+        }
+
+        .accordion {
+            width: 700px;
+            margin: 100px auto;
+
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .item {
+            box-shadow: 0 0px 32px rgba(0, 0, 0, 0.4);
+            padding: 24px;
+
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            column-gap: 24px;
+            row-gap: 32px;
+            align-items: center
+        }
+
+        .number,
+        .text {
+            font-size: 24px;
+            font-weight: 500;
+            /* color: #087f5b; */
+
+        }
+
+
+        .number {
+            color: #ced4da;
+        }
+
+        .text {}
+
+        .icon {
+            width: 24px;
+            height: 24px;
+            stroke: #087f5b;
+
+        }
+
+        .hidden-box {
+            grid-column: 2;
+            display: none;
+        }
+
+        .hidden-box p {
+            line-height: 1.6;
+            /* margin-bottom: 24px; */
+        }
+
+        .hidden-box ul {
+            color: #868e96;
+            margin-left: 20px;
+
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        /* OPEN STATE */
+        .open {
+            border-top: 4px solid #087f5b;
+        }
+
+        .open .hidden-box {
+            display: block;
+        }
+
+        .open .number,
+        .open .text {
+            color: #087f5b;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="accordion">
+        <div class="item">
+            <p class="number">01</p>
+            <p class="text">Where are these chairs assembled</p>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="icon">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+            </svg>
+            <div class="hidden-box">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus veritatis perspiciatis, quaerat
+                    accusamus delectus fugit quo, accusantium libero ullam quas doloremque non corrupti repudiandae,
+                    inventore suscipit vel ut ab quae!</p>
+            </div>
+            <div class="hidden-box">
+                <ul>
+                    <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci vitae vero suscipit officiis
+                        doloremque quam.</li>
+                    <li>Exercitationem minus, unde, asperiores tempora
+                        voluptates, deserunt quod hic quam aliquam impedit obcaecati? Obcaecati, vero.</li>
+                    <li>Amet quod hic asperiores quaerat voluptatem ea
+                        aspernatur explicabo, corporis fugiat?</li>
+                    <li>Ipsa odio nihil, itaque odit sint rerum,
+                        praesentium minus vel iste eum dignissimos, aliquid enim quam. Earum sequi quo doloribus atque
+                        quam!
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="item open">
+            <p class="number">02</p>
+            <p class="text">How long do I have to return my chair?</p>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="icon">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+            </svg>
+            <div class="hidden-box">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus veritatis perspiciatis, quaerat
+                    accusamus delectus fugit quo, accusantium libero ullam quas doloremque non corrupti repudiandae,
+                    inventore suscipit vel ut ab quae!</p>
+            </div>
+            <div class="hidden-box">
+                <ul>
+                    <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci vitae vero suscipit officiis
+                        doloremque quam.</li>
+                    <li>Exercitationem minus, unde, asperiores tempora
+                        voluptates, deserunt quod hic quam aliquam impedit obcaecati? Obcaecati, vero.</li>
+                    <li>Amet quod hic asperiores quaerat voluptatem ea
+                        aspernatur explicabo, corporis fugiat?</li>
+                    <li>Ipsa odio nihil, itaque odit sint rerum,
+                        praesentium minus vel iste eum dignissimos, aliquid enim quam. Earum sequi quo doloribus atque
+                        quam!
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="item">
+            <p class="number">03</p>
+            <p class="text">Do you ship to contries outside the EU?</p>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="icon">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+            </svg>
+            <div class="hidden-box">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus veritatis perspiciatis, quaerat
+                    accusamus delectus fugit quo, accusantium libero ullam quas doloremque non corrupti repudiandae,
+                    inventore suscipit vel ut ab quae!</p>
+            </div>
+            <div class="hidden-box">
+                <ul>
+                    <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci vitae vero suscipit officiis
+                        doloremque quam.</li>
+                    <li>Exercitationem minus, unde, asperiores tempora
+                        voluptates, deserunt quod hic quam aliquam impedit obcaecati? Obcaecati, vero.</li>
+                    <li>Amet quod hic asperiores quaerat voluptatem ea
+                        aspernatur explicabo, corporis fugiat?</li>
+                    <li>Ipsa odio nihil, itaque odit sint rerum,
+                        praesentium minus vel iste eum dignissimos, aliquid enim quam. Earum sequi quo doloribus atque
+                        quam!
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
